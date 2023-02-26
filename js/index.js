@@ -2,7 +2,7 @@ function loGin() {
     console.log(username.value);
     console.log(pwd.value);
     $.ajax({
-        url: 'http://123.60.44.50:3000/users',
+        url: 'https://db.api.orght.cn/users',
         type: 'GET',
         success: function (data) {
             console.log(data[0].password);
@@ -29,7 +29,7 @@ function loGin() {
 
 function putData(username, name_, pwd) {
     $.ajax({
-        url: 'http://123.60.44.50:3000/users',
+        url: 'https://db.api.orght.cn/users',
         type: 'POST',
         data: {
             id: username,
@@ -50,7 +50,7 @@ function reGister() {
     else {
         let m = 1;
         $.ajax({
-            url: 'http://123.60.44.50:3000/users',
+            url: 'https://db.api.orght.cn/users',
             type: 'GET',
             success: function (data) {
                 console.log(username.value);
