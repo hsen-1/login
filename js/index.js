@@ -2,7 +2,7 @@ function loGin() {
     console.log(username.value);
     console.log(pwd.value);
     $.ajax({
-        url: 'http://123.60.44.50:3000/users',
+        url: 'https://db-api.amarea.cn/users',
         type: 'GET',
         success: function (data) {
             console.log(data[0].password);
@@ -12,13 +12,13 @@ function loGin() {
                     alert("登录成功！");
                     let url = "./home.html?username=" + username.value + "&pwd=" + pwd.value;
                     url = encodeURI(url);
-                    window.location.href =url;
+                    window.location.href = url;
                     // setTimeout(function () {
 
                     // })
                     break;
                 }
-                if(i==data.length-1) {
+                if (i == data.length - 1) {
                     alert("用户名或密码错误");
                     break;
                 }
@@ -29,7 +29,7 @@ function loGin() {
 
 function putData(username, name_, pwd) {
     $.ajax({
-        url: 'http://123.60.44.50:3000/users',
+        url: 'https://db-api.amarea.cn/users',
         type: 'POST',
         data: {
             id: username,
@@ -50,7 +50,7 @@ function reGister() {
     else {
         let m = 1;
         $.ajax({
-            url: 'http://123.60.44.50:3000/users',
+            url: 'https://db-api.amarea.cn/users',
             type: 'GET',
             success: function (data) {
                 console.log(username.value);
